@@ -32,14 +32,14 @@ footer {
     text-align: center;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 700px) {
     body {
         grid-template-rows: 50px 50px auto 50px;
         grid-template-areas: 
-        "header header header header header header"
-        "aside aside aside aside aside aside"
-        "main main main main main main"
-        "footer footer footer footer footer footer";
+        "header header"
+        "aside aside"
+        "main main"
+        "footer footer";
     }
 }
 
@@ -88,7 +88,7 @@ footer {
     margin-right: 50px;
 }
 
-/* @media all and (max-width: 767px) {
+@media all and (max-width: 700px) {
     .table .table-header {
         display: none;
     }
@@ -102,4 +102,4 @@ footer {
     .table .col-3 {
         padding-bottom: 8px;
     }
-} */
+}
