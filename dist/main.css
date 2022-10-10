@@ -40,7 +40,7 @@ nav p {
 
 nav ul {
     list-style-type: none;
-    padding: 0;
+    padding: 0; 
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -126,7 +126,7 @@ footer {
     }
 
     nav ul li {
-        margin:0 10px 0 10px;
+        /* margin:0 10px 0 10px; */
     }
     
     .table .table-header {
