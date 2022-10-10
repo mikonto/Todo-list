@@ -7,9 +7,20 @@ body {
     grid-template-rows: 50px auto 50px;
     grid-template-areas: 
     "header header"
-    "aside main"
-    "aside footer";
+    "nav main"
+    "nav footer";
   }
+
+  @media (max-width: 700px) {
+    body {
+        grid-template-rows: 50px 50px auto 50px;
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "main main"
+        "footer footer";
+    }
+}
   
 header {
     background-color: #154360;
@@ -18,8 +29,8 @@ header {
     font-weight: bold;
 }
 
-aside {
-    grid-area: aside;
+nav {
+    grid-area: nav;
     background-color: #D4E6F1;
 }
 
@@ -32,20 +43,9 @@ footer {
     text-align: center;
 }
 
-@media (max-width: 700px) {
-    body {
-        grid-template-rows: 50px 50px auto 50px;
-        grid-template-areas: 
-        "header header"
-        "aside aside"
-        "main main"
-        "footer footer";
-    }
-}
-
 header,
 main,
-aside,
+nav,
 footer {
     padding: 1rem;
 }
@@ -74,13 +74,14 @@ footer {
 
 .table .col-1 {
     flex-basis: 60%;
+    min-width: 90px;
 }
 
 .table .col-2,
 .table .col-3
  {
     flex-basis: 20%;
-    min-width: 80px;
+    min-width: 90px;
 }
 
 .table .col-1,
@@ -94,12 +95,26 @@ footer {
     }
     
     .table li {
-        display: block;
+        /* display: block; */
+        flex-direction: column;
     }
 
     .table .col-1,
     .table .col-2,
     .table .col-3 {
         padding-bottom: 8px;
+        margin: 0;
+    }
+
+    .table .col-1::before {
+        content: "Task: ";
+    }
+
+    .table .col-2::before {
+        content: "Due date: ";
+    }
+
+    .table .col-3::before {
+        content: "Priority: ";
     }
 }
