@@ -65,6 +65,7 @@ footer {
 }
 .table .table-header {
     background-color: #95A5A6;
+    font-weight: bold;
 }   
 
 .table .table-row {
@@ -77,16 +78,21 @@ footer {
     min-width: 90px;
 }
 
-.table .col-2,
-.table .col-3
+.table .col-2
  {
     flex-basis: 20%;
     min-width: 90px;
 }
 
+.table .col-2,
+.table .col-3
+ {
+    flex-basis: 20%;
+}
+
 .table .col-1,
 .table .col-2 {
-    margin-right: 50px;
+    margin-right: 30px;
 }
 
 @media all and (max-width: 700px) {
@@ -102,8 +108,16 @@ footer {
     .table .col-1,
     .table .col-2,
     .table .col-3 {
-        padding-bottom: 8px;
+        padding-bottom: 14px;
         margin: 0;
+    }
+
+    .table .col-1::before,
+    .table .col-2::before,
+    .table .col-3::before {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 3px;
     }
 
     .table .col-1::before {
