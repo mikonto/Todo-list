@@ -69,7 +69,7 @@ footer {
 .table {
     padding-inline-start: 0px;
     padding-inline-end: 0px;
-    margin:10px;
+    margin:0px;
 }
 
 .table li {
@@ -122,11 +122,11 @@ footer {
 
     nav ul p {
         width: 100%;
-        margin: 8px 0 8px 0;
+        margin: 0;
     }
 
     nav ul li {
-        /* margin:0 10px 0 10px; */
+        margin: 10px 10px 0 10px;
     }
     
     .table .table-header {
