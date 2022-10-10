@@ -1,8 +1,8 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     display: grid;
-    width: 100vw;
-    height: 100vh;
+    /* width: 100vw; */
+    /* height: 100vh; */
     grid-template-columns: fit-content(250px) auto;
     grid-template-rows: 50px auto 50px;
     grid-template-areas: 
@@ -50,6 +50,22 @@ nav ul li {
     margin: 8px;
 }
 
+.table-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 10px 0 10px;
+}
+
+.finished > li{
+    text-decoration: line-through;
+}
+
+.finished > .table-row {
+    color: gray;
+
+}
+
 main {
     grid-area: main;
 }
@@ -65,7 +81,9 @@ nav,
 footer {
     padding: 1rem;
 }
- 
+
+/* Table */
+
 .table {
     padding-inline-start: 0px;
     padding-inline-end: 0px;
@@ -92,6 +110,10 @@ footer {
     box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
 }
 
+.table .col-0 {
+    min-width: 20px;
+}
+
 .table .col-1 {
     flex-basis: 60%;
     min-width: 90px;
@@ -109,9 +131,18 @@ footer {
     flex-basis: 20%;
 }
 
+.table .col-0,
 .table .col-1,
 .table .col-2 {
     margin-right: 30px;
+}
+
+.table img {
+    width: 20px;
+}
+
+.new-task-btn {
+    margin: 0 10px 10px 10px;
 }
 
 @media all and (max-width: 700px) {
@@ -134,7 +165,40 @@ footer {
     }
     
     .table li {
-        flex-direction: column;
+        display: grid;
+        grid-template-areas: 
+        "l1 r1"
+        "l2 r2"
+        "l3 r3";
+    }
+
+    .table .col-0 {
+        width: 20px;
+        grid-area: l1;
+    } 
+
+    .table .col-1 {
+        grid-area: r1;
+    }
+
+    .table .col-1::before {
+        content: "Task: ";
+    }
+
+    .table .col-2 {
+        grid-area: r2;
+    }
+
+    .table .col-2::before {
+        content: "Due date: ";
+    }
+
+    .table .col-3 {
+        grid-area: r3;
+    }
+
+    .table .col-3::before {
+        content: "Priority: ";
     }
 
     .table .col-1,
@@ -151,16 +215,51 @@ footer {
         display: block;
         margin-bottom: 3px;
     }
-
-    .table .col-1::before {
-        content: "Task: ";
-    }
-
-    .table .col-2::before {
-        content: "Due date: ";
-    }
-
-    .table .col-3::before {
-        content: "Priority: ";
-    }
 }
+
+/* Modal background */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  /* Modal Content */
+  .modal-task-details {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 3px;
+    width: 60%;
+  }
+
+  @media all and (max-width: 700px) { 
+    .modal-task-details {
+        width: 80%;
+    }
+  }
+
+  
+  /* Modal close button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }

@@ -13,36 +13,86 @@
         ✔️ Todo List
     </header>
     <nav>
-      
-        <ul><p>Projects:</p>
+        <ul><p>Lists:</p>
           <li>Default</li>
           <li>Second project</li>
           <li>Third project</li>
+          <li><button>Add new</button></li>
         </ul>
     </nav>
     <main>
+      <div class="table-title" >
+        <h3>Default</h3>
+        <div>
+          <button>Edit</button>
+          <button>Delete</button>
+        </div>
+      </div>
         <ul class="table">
             <li class="table-header">
+              <div class="col-0"></div>
               <div class="col-1">Task</div>
               <div class="col-2">Due Date</div>
               <div class="col-3">Priority</div>
             </li>
             <li class="table-row">
+              <div class="col-0"><img src="img/checkbox-blank.svg" alt=""></div>
               <div class="col-1">Buy groceries. Long long long long long long long long text.</div>
               <div class="col-2">10.10.2022</div>
               <div class="col-3">High</div>
             </li>
             <li class="table-row">
+              <div class="col-0"><img src="img/checkbox-blank.svg" alt=""></div>
               <div class="col-1">Clean the house</div>
               <div class="col-2">11.10.2022</div>
               <div class="col-3">Medium</div>
             </li>
             <li class="table-row">
+              <div class="col-0"><img src="img/checkbox-blank.svg" alt=""></div>
               <div class="col-1">Go to the gym</div>
               <div class="col-2">12.10.2022</div>
               <div class="col-3">Low</div>
             </li>
           </ul>
+          <button class="new-task-btn">New task</button>
+
+          <div class="table-title" >
+            <h3>Finished tasks</h3>
+          </div>
+
+          <ul class="table finished">
+            <li class="table-header">
+              <div class="col-0"></div>
+              <div class="col-1">Task</div>
+              <div class="col-2">Due Date</div>
+              <div class="col-3">Priority</div>
+            </li>
+            <li class="table-row">
+              <div class="col-0"><img src="img/checkbox.svg" alt=""></div>
+              <div class="col-1">Buy groceries. Long long long long long long long long text.</div>
+              <div class="col-2">10.10.2022</div>
+              <div class="col-3">High</div>
+            </li>
+            <li class="table-row">
+              <div class="col-0"><img src="img/checkbox.svg" alt=""></div>
+              <div class="col-1">Clean the house</div>
+              <div class="col-2">11.10.2022</div>
+              <div class="col-3">Medium</div>
+            </li>
+            <li class="table-row">
+              <div class="col-0"><img src="img/checkbox.svg" alt=""></div>
+              <div class="col-1">Go to the gym</div>
+              <div class="col-2">12.10.2022</div>
+              <div class="col-3">Low</div>
+            </li>
+          </ul>
+
+          <div class="modal">
+            <div class="modal-task-details">
+              <span class="close">&times;</span>
+              <p>Checkbox, title, description, due date, priority, notes, checklist</p>
+            </div>
+          </div>
     </main>
 
     <footer>
