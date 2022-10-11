@@ -1,17 +1,19 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     display: grid;
-    /* width: 100vw; */
-    /* height: 100vh; */
     grid-template-columns: fit-content(250px) auto;
-    grid-template-rows: 50px auto 50px;
+    /* grid-template-rows: 50px auto 50px; */
     grid-template-areas: 
     "header header"
     "nav main"
     "nav footer";
   }
 
-  @media (max-width: 700px) {
+body.no-scroll {
+    /* overflow: hidden; */
+}
+
+@media (max-width: 700px) {
     body {
         grid-template-rows: 50px auto auto 50px;
         grid-template-areas: 
@@ -21,7 +23,7 @@ body {
         "footer footer";
     }
 }
-  
+
 header {
     background-color: #154360;
     color: white;
@@ -63,7 +65,6 @@ nav ul li {
 
 .finished > .table-row {
     color: gray;
-
 }
 
 main {
@@ -83,10 +84,9 @@ footer {
 }
 
 /* Table */
-
 .table {
     padding-inline-start: 0px;
-    padding-inline-end: 0px;
+    /* padding-inline-end: 0px; */
     margin: 10px;
 }
 
@@ -100,10 +100,8 @@ footer {
 
 .table .table-header {
     background-color: #95A5A6;
-    font-weight: bold;
     padding: 20px;
-
-}   
+}
 
 .table .table-row {
     background-color: #ffffff;
@@ -137,11 +135,15 @@ footer {
     margin-right: 30px;
 }
 
-.table img {
+.checkbox {
     width: 20px;
 }
 
-.new-task-btn {
+.modal .checkbox {
+    margin-right: 30px;
+}
+
+main .new-task-btn {
     margin: 0 10px 10px 10px;
 }
 
@@ -222,7 +224,7 @@ footer {
     display: none; 
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
+    padding-top: 70px;
     left: 0;
     top: 0;
     width: 100%;
@@ -231,35 +233,61 @@ footer {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4);
   }
+
+.modal.modal-visible{
+    /* display: block; */
+}
   
-  /* Modal Content */
-  .modal-task-details {
+/* Modal */
+.modal-task-details {
     background-color: #fefefe;
     margin: auto;
+    margin-bottom: 20vh;
     padding: 20px;
     border: 1px solid #888;
     border-radius: 3px;
     width: 60%;
-  }
+}
 
-  @media all and (max-width: 700px) { 
+@media all and (max-width: 700px) { 
     .modal-task-details {
         width: 80%;
     }
-  }
+}
 
+.modal-content {
+    margin: 50px 20px 20px 20px;
+}
+
+.modal-content .title {
+    padding: 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: #95A5A6;
+}
+
+.modal-content form {
+    margin-bottom: 20px;
+}
+
+.modal-buttons {
+    float: right;
+}
   
-  /* Modal close button */
-  .close {
+.modal-task-details .close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+}
   
-  .close:hover,
-  .close:focus {
+.modal-task-details .close:hover,
+.modal-task-details .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+}
+
+.modal-task-details .delete-btn {
+    color: red;
+}

@@ -8,97 +8,128 @@
     <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
-<body>
-    <header>
-        ✔️ Todo List
-    </header>
-    <nav>
-        <ul><p>Lists:</p>
-          <li>Default</li>
-          <li>Second project</li>
-          <li>Third project</li>
-          <li><button>Add new</button></li>
-        </ul>
-    </nav>
-    <main>
-      <div class="table-title" >
-        <h3>Default</h3>
-        <div>
-          <button>Edit</button>
-          <button>Delete</button>
+<body class="no-scroll">
+  <!-- HEADER -->
+  <header>
+    ✔️ Todo List
+  </header>
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <p>Lists:</p>
+      <li>Default</li>
+      <li>Second project</li>
+      <li>Third project</li>
+      <li>
+        <button>Add new</button>
+      </li>
+    </ul>
+  </nav>
+  <!-- MAIN -->
+  <main>
+    <div class="table-title" >
+      <h3>Default</h3>
+      <div>
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
+    </div>
+    <ul class="table">
+      <li class="table-header">
+        <div class="col-0"></div>
+        <div class="col-1">Task</div>
+        <div class="col-2">Due Date</div>
+        <div class="col-3">Priority</div>
+      </li>
+      <li class="table-row">
+        <div class="col-0"><img src="img/checkbox-blank.svg" class="checkbox"></div>
+        <div class="col-1">Buy groceries. Long long long long long long long long text.</div>
+        <div class="col-2">10.10.2022</div>
+        <div class="col-3">High</div>
+      </li>
+      <li class="table-row">
+        <div class="col-0"><img src="img/checkbox-blank.svg" class="checkbox"></div>
+        <div class="col-1">Clean the house</div>
+        <div class="col-2">11.10.2022</div>
+        <div class="col-3">Medium</div>
+      </li>
+      <li class="table-row">
+        <div class="col-0"><img src="img/checkbox-blank.svg" class="checkbox"></div>
+        <div class="col-1">Go to the gym</div>
+        <div class="col-2">12.10.2022</div>
+        <div class="col-3">Low</div>
+      </li>
+    </ul>
+    <button class="new-task-btn">New task</button>
+    <!-- FINISHED TASKS TABLE -->
+    <div class="table-title" >
+      <h3>Finished tasks</h3>
+    </div>
+
+    <ul class="table finished">
+      <li class="table-header">
+        <div class="col-0"></div>
+        <div class="col-1">Task</div>
+        <div class="col-2">Due Date</div>
+        <div class="col-3">Priority</div>
+      </li>
+      <li class="table-row">
+        <div class="col-0"><img src="img/checkbox.svg" class="checkbox"></div>
+        <div class="col-1">Buy groceries. Long long long long long long long long text.</div>
+        <div class="col-2">10.10.2022</div>
+        <div class="col-3">High</div>
+      </li>
+      <li class="table-row">
+        <div class="col-0"><img src="img/checkbox.svg" class="checkbox"></div>
+        <div class="col-1">Clean the house</div>
+        <div class="col-2">11.10.2022</div>
+        <div class="col-3">Medium</div>
+      </li>
+      <li class="table-row">
+        <div class="col-0"><img src="img/checkbox.svg" class="checkbox"></div>
+        <div class="col-1">Go to the gym</div>
+        <div class="col-2">12.10.2022</div>
+        <div class="col-3">Low</div>
+      </li>
+    </ul>
+    <!-- MODAL -->
+    <div class="modal modal-visible">
+      <div class="modal-task-details">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+          <p class="title">Title:</p>
+          <p>Buy groceries. Long long long long long long long long text.</p>
+          <p class="title">Description:</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse sed nisi lacus sed viverra.</p>
+          <p class="title">Due date:</p>
+          <p>11.10.2022</p>
+          <p class="title">Priority:</p>
+          <p>High</p>
+          <p class="title">Notes:</p>
+          <p>Senectus et netus et malesuada fames ac. Nam at lectus urna duis convallis convallis tellus id.</p>
+          <p class="title">Checklist:</p>
+          <form>
+            <input type="checkbox" id="checkbox1">
+            <label for="checkbox1">Potatoes</label><br>
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2">Milk</label><br>
+            <input type="checkbox" id="checkbox3">
+            <label for="checkbox3">Sugar</label><br><br>
+          </form>
+          <button>Close</button>
+          <div class="modal-buttons">
+            <button>Edit</button>
+            <button class="delete-btn" >Delete</button>
+          </div>
         </div>
       </div>
-        <ul class="table">
-            <li class="table-header">
-              <div class="col-0"></div>
-              <div class="col-1">Task</div>
-              <div class="col-2">Due Date</div>
-              <div class="col-3">Priority</div>
-            </li>
-            <li class="table-row">
-              <div class="col-0"><img src="img/checkbox-blank.svg" alt=""></div>
-              <div class="col-1">Buy groceries. Long long long long long long long long text.</div>
-              <div class="col-2">10.10.2022</div>
-              <div class="col-3">High</div>
-            </li>
-            <li class="table-row">
-              <div class="col-0"><img src="img/checkbox-blank.svg" alt=""></div>
-              <div class="col-1">Clean the house</div>
-              <div class="col-2">11.10.2022</div>
-              <div class="col-3">Medium</div>
-            </li>
-            <li class="table-row">
-              <div class="col-0"><img src="img/checkbox-blank.svg" alt=""></div>
-              <div class="col-1">Go to the gym</div>
-              <div class="col-2">12.10.2022</div>
-              <div class="col-3">Low</div>
-            </li>
-          </ul>
-          <button class="new-task-btn">New task</button>
+    </div>
+  </main>
 
-          <div class="table-title" >
-            <h3>Finished tasks</h3>
-          </div>
-
-          <ul class="table finished">
-            <li class="table-header">
-              <div class="col-0"></div>
-              <div class="col-1">Task</div>
-              <div class="col-2">Due Date</div>
-              <div class="col-3">Priority</div>
-            </li>
-            <li class="table-row">
-              <div class="col-0"><img src="img/checkbox.svg" alt=""></div>
-              <div class="col-1">Buy groceries. Long long long long long long long long text.</div>
-              <div class="col-2">10.10.2022</div>
-              <div class="col-3">High</div>
-            </li>
-            <li class="table-row">
-              <div class="col-0"><img src="img/checkbox.svg" alt=""></div>
-              <div class="col-1">Clean the house</div>
-              <div class="col-2">11.10.2022</div>
-              <div class="col-3">Medium</div>
-            </li>
-            <li class="table-row">
-              <div class="col-0"><img src="img/checkbox.svg" alt=""></div>
-              <div class="col-1">Go to the gym</div>
-              <div class="col-2">12.10.2022</div>
-              <div class="col-3">Low</div>
-            </li>
-          </ul>
-
-          <div class="modal">
-            <div class="modal-task-details">
-              <span class="close">&times;</span>
-              <p>Checkbox, title, description, due date, priority, notes, checklist</p>
-            </div>
-          </div>
-    </main>
-
-    <footer>
+  <footer>
         By Mikonto
-    </footer>
+  </footer>
 
-    <script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
