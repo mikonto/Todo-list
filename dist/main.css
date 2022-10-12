@@ -233,13 +233,9 @@ main .new-task-btn {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4);
   }
-
-.modal.modal-visible{
-    /* display: block; */
-}
   
 /* Modal */
-.modal-task-details {
+.modal-task {
     background-color: #fefefe;
     margin: auto;
     margin-bottom: 20vh;
@@ -249,45 +245,57 @@ main .new-task-btn {
     width: 60%;
 }
 
+.details-modal-visible {
+    display: block;
+}
+
+.edit-modal-visible {
+    display: block;
+}
+
+.create-modal-visible {
+    display: block;
+}
+
 @media all and (max-width: 700px) { 
-    .modal-task-details {
+    .modal-task {
         width: 80%;
     }
 }
 
 .modal-content {
-    margin: 50px 20px 20px 20px;
+    margin: 20px;
 }
 
-.modal-content .title {
+.modal-content .details-title {
     padding: 8px;
     border-radius: 3px;
     font-weight: bold;
     background-color: #95A5A6;
 }
 
-.modal-content form {
-    margin-bottom: 20px;
-}
-
-.modal-buttons {
+.button-float-right {
     float: right;
 }
+
+.modal button {
+    margin-top: 20px;
+}
   
-.modal-task-details .close {
+.modal-task .close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
   
-.modal-task-details .close:hover,
-.modal-task-details .close:focus {
+.modal-task .close:hover,
+.modal-task .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 
-.modal-task-details .delete-btn {
+.modal-task .delete-btn {
     color: red;
 }
