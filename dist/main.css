@@ -1,8 +1,9 @@
 body {
+    height: 100vh;
     font-family: 'Courier New', Courier, monospace;
     display: grid;
     grid-template-columns: fit-content(250px) auto;
-    /* grid-template-rows: 50px auto 50px; */
+    grid-template-rows: 50px auto 50px;
     grid-template-areas: 
     "header header"
     "nav main"
@@ -43,7 +44,6 @@ nav p {
 nav ul {
     list-style-type: none;
     padding: 0; 
-    margin: 0;
     display: flex;
     flex-direction: column;
 }
@@ -245,15 +245,7 @@ main .new-task-btn {
     width: 60%;
 }
 
-.details-modal-visible {
-    display: block;
-}
-
-.edit-modal-visible {
-    display: block;
-}
-
-.create-modal-visible {
+.modal-visible {
     display: block;
 }
 
